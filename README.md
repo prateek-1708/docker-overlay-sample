@@ -7,9 +7,9 @@ There are two ways of doing this:
 
 Let's start by provision three docker machines on which we will run our swarm cluster.
 ```	
-docker-machine create -d virtual box dkr-swarm-node-1
-docker-machine create -d virtual box dkr-swarm-node-2
-docker-machine create -d virtual box dkr-swarm-node-3
+docker-machine create -d virtualbox dkr-swarm-node-1
+docker-machine create -d virtualbox dkr-swarm-node-2
+docker-machine create -d virtualbox dkr-swarm-node-3
 ```
 now lets start our swarm. Point your docker engine at the first node. It will become the swarm manager. You point your engine at first node
 ```
@@ -48,7 +48,7 @@ Swarm Master:
 
 Initialise a docker swarm by running the init command like so 
 ```
-	docker swarm init --advertise-addr $(docker-machine ip dkr-swarm-node-1) --listen-addr $(docker-machine ip dkr-swarm-node-1)
+docker swarm init --advertise-addr $(docker-machine ip dkr-swarm-node-1) --listen-addr $(docker-machine ip dkr-swarm-node-1)
 ```
 
 the node where this command becomes the swarm master / manager. This command also spits out a join sample command.
@@ -64,7 +64,6 @@ There is a very basic vagrant file in the repo. All you need is to install virtu
 
 ```
 Vagrant up
-
 ```
 three boxes in one swift command. Once  
 
